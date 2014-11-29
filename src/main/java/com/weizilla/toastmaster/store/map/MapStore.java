@@ -31,6 +31,12 @@ public class MapStore implements Store
     }
 
     @Override
+    public void updateTopic(int id, String topic)
+    {
+        tableTopics.put(id, new TableTopic(id, topic));
+    }
+
+    @Override
     public void deleteTopic(int id)
     {
         tableTopics.remove(id);

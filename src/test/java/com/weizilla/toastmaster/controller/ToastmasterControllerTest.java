@@ -53,6 +53,16 @@ public class ToastmasterControllerTest
     }
 
     @Test
+    public void callsStoreToUpdateTopic() throws Exception
+    {
+        int testTopicId = 100;
+        String testTopic = "TEST TOPIC";
+        controller.updateTopic(testTopicId, testTopic);
+        assertSame(testTopicId, storeStub.getUpdateTopicId());
+        assertSame(testTopic, storeStub.getUpdateTopicString());
+    }
+
+    @Test
     public void callsStoreWithNewSpeaker() throws Exception
     {
         String testSpeaker = "TEST SPEAKER";

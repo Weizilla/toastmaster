@@ -34,6 +34,11 @@ public class ToastmasterController
         return store.getTableTopics();
     }
 
+    public void updateTopic(int id, String topic)
+    {
+        store.updateTopic(id, topic);
+    }
+
     public void deleteTopic(int id)
     {
         store.deleteTopic(id);

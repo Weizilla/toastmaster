@@ -32,6 +32,13 @@ public class ToastmasterWebController
         return tableTopics(model);
     }
 
+    @RequestMapping(value = "/tableTopics/update", method = RequestMethod.POST)
+    public String updateTableTopic(Model model, @RequestParam int id, @RequestParam String topic)
+    {
+        controller.updateTopic(id, topic);
+        return tableTopics(model);
+    }
+
     @RequestMapping(value = "/tableTopics/delete", method = RequestMethod.POST)
     public String deleteTableTopic(Model model, @RequestParam int id)
     {

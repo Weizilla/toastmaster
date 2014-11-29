@@ -76,6 +76,17 @@ public class ToastmasterWebControllerTest
         assertEquals(EXPECTED, model.asMap().get("topics"));
     }
 
+    @Test
+    public void updatesTopicAndReturnsMOdel() throws Exception
+    {
+        int id = 1;
+        String newTopic = "NEW";
+        webController.updateTableTopic(model, id, newTopic);
+
+        verify(controller).updateTopic(id, newTopic);
+        assertEquals(EXPECTED, model.asMap().get("topics"));
+    }
+
     @Configuration
     static class ToastmasterWebControllerTestConfig
     {

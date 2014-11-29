@@ -10,6 +10,8 @@ public class StoreStub implements Store
 {
     private Collection<TableTopic> tableTopics;
     private String createdTestTopic;
+    private int updateTopicId;
+    private String updateTopicString;
     private int deleteTopicId;
     private Collection<Speaker> speakers;
     private String createdSpeaker;
@@ -35,6 +37,23 @@ public class StoreStub implements Store
     public void setTableTopics(Collection<TableTopic> tableTopics)
     {
         this.tableTopics = tableTopics;
+    }
+
+    @Override
+    public void updateTopic(int id, String topic)
+    {
+        updateTopicId = id;
+        updateTopicString = topic;
+    }
+
+    public int getUpdateTopicId()
+    {
+        return updateTopicId;
+    }
+
+    public String getUpdateTopicString()
+    {
+        return updateTopicString;
     }
 
     @Override

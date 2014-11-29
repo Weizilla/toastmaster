@@ -10,6 +10,7 @@ public interface Store
     void createTableTopic(String topic);
     Collection<TableTopic> getTableTopics();
     void deleteTopic(int id);
+    void updateTopic(int id, String topic);
 
     void createSpeaker(String name);
     Collection<Speaker> getSpeakers();

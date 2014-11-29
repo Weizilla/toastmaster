@@ -38,6 +38,21 @@ public class MapStoreTest
     }
 
     @Test
+    public void updatesTableTopics() throws Exception
+    {
+        String newName = "NEW TOPIC";
+        TableTopic topic = new TableTopic(0, "TEST TOPIC 1");
+        store.createTableTopic(topic.getTopic());
+
+        TableTopic actual  = Iterables.getOnlyElement(store.getTableTopics());
+        assertEquals(topic, actual);
+
+        store.updateTopic(actual.getId(), newName);
+        TableTopic newTopic  = Iterables.getOnlyElement(store.getTableTopics());
+        assertEquals(newName, newTopic.getTopic());
+    }
+
+    @Test
     public void deletesFromTableTopics() throws Exception
     {
         TableTopic topic1 = new TableTopic(0, "TEST TOPIC 1");
